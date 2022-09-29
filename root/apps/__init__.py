@@ -3,7 +3,8 @@
 Copyright (c) 2019 - present AppSeed.us
 """
 
-from flask import Flask
+from flask import Flask, send_from_directory
+from flask_dropzone import Dropzone
 from flask_login import LoginManager
 from flask_sqlalchemy import SQLAlchemy
 from importlib import import_module
@@ -11,6 +12,7 @@ from importlib import import_module
 
 db = SQLAlchemy()
 login_manager = LoginManager()
+dropzone = Dropzone()
 
 
 def register_extensions(app):
@@ -36,8 +38,12 @@ def configure_database(app):
 
 
 def create_app(config):
+
     app = Flask(__name__)
+
+    dropzone.init_app(app)
     app.config.from_object(config)
+    app.config['MAX_CONTENT_LENGTH'] = 16 * 1000 * 1000
     register_extensions(app)
     register_blueprints(app)
     configure_database(app)

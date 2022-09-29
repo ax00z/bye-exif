@@ -1,23 +1,47 @@
-import os
-from PIL import Image
-from flask import Flask, redirect, url_for, render_template, request, flash
-app = Flask(__name__)
+import exifread
+#from flask import Flask, flash, request, redirect, url_for
+#from werkzeug.utils import secure_filename
 
 
-@app.route('/', methods=['POST', 'GET'])
-def file_upload():
-    if request.method == "POST":
-        print("method is post")
-        if request.files:
-            for file_to_upload in request.files.getlist("uploaded_file"):
-                file_to_upload.seek(0, os.SEEK_END)
-                filename = (file_to_upload.filename)
-                file_to_upload.save(os.path.join(
-                    app.config['UPLOAD_FOLDER'], filename))
-                return render_template('index.html', succ="Your file(s) are now being processed.")
-        else:  # If no files request, redirect to index.
-            return redirect(request.url)
-    else:  # If not a POST request, load page as normal.
-        return render_template('index.html', is_home='yes')
+#UPLOAD_FOLDER = '/path/to/the/uploads'
 
 
+""" app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1000 * 1000
+ """
+
+
+f = open('C:/Users/Amir/Documents/glasses.jpg','rb')
+
+
+exif = exifread.process_file(f, details=True, stop_tag='Model')
+
+
+print(exif)
+
+
+
+""" def clean_file(filename):
+    helper = exif.Image(file)
+    metadata = helper.get_all()
+    
+
+    return((metadata))
+
+
+
+
+print(clean_file(file))
+ """
+
+""" @app.route('/', methods=['GET', 'POST'])
+def upload_file():
+	if request.method == 'POST':
+		file = request.files['file']
+
+		filename = clean_file(file.filename)
+		file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+		flash(filename)
+		return
+ """

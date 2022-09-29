@@ -16,10 +16,12 @@
 <html lang="en">
 
 <head>
+
+
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="apple-touch-icon" sizes="76x76" href="{{ config.ASSETS_ROOT }}/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="{{ config.ASSETS_ROOT }}/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+  <link rel="apple-touch-icon" sizes="76x76" href="/static/assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="/static/assets/img/favicon.png">
 
   <title>
     ByeExif! - Main
@@ -28,84 +30,104 @@
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <!-- Nucleo Icons -->
-  <link href="{{ config.ASSETS_ROOT }}/css/nucleo-icons.css" rel="stylesheet" />
-  <link href="{{ config.ASSETS_ROOT }}/css/nucleo-svg.css" rel="stylesheet" />
+  <link href="/static/assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="/static/assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
-  <link href="{{ config.ASSETS_ROOT }}/css/nucleo-svg.css" rel="stylesheet" />
+  <link href="/static/assets/css/nucleo-svg.css" rel="stylesheet" />
   <!-- CSS Files -->
-  <link id="pagestyle" href="{{ config.ASSETS_ROOT }}/css/soft-ui-dashboard.css?v=1.0.6" rel="stylesheet" />
-  <link id="pagestyle_dark" href="{{ config.ASSETS_ROOT }}/css/dark-theme-core.css" rel="stylesheet" />
-  <link id="nicepage href=" {{ config.ASSETS_ROOT }}/css/nicepage.css rel="stylesheet" />
+  <link id="pagestyle" href="/static/assets/css/soft-ui-dashboard.css?v=1.0.6" rel="stylesheet" />
+  <link id="pagestyle_dark" href="/static/assets/css/dark-theme-core.css" rel="stylesheet" />
 
-</head>
-<div>
-  {% include "includes/navigation.html" %}
-</div>
+  {{ dropzone.load_css() }}
 
+<body>
 
-
-
-
-<body class=" d-flex-inline col-12    mt-4  border-radius-xl" style="padding: 20px; width: auto; height: auto;">
-
-  <div class="d-flex section over-hide mt-6 mb-6"
-    style="padding-left: 10px; padding-right: 10px; width: auto; height: auto;">
-    <div class=" d-flex container-xl     border-radius-xl"
-      style=" padding-left: 10px; padding-right: 10px;  background-color: aliceblue; width: auto; height: auto;">
-      <div class="d-flex card-3d-wrap "
-        style="align-items: center; padding-left: 46px; width: auto; height: auto; background-color: aliceblue;">
-        <div class="d-flex row border-radius-xl justify-content-center"
-          style="padding:  2px; background-color: aliceblue;">
-          <div class="d-flex    justify-content-center" style=" padding-left: 0cm ; background-color: aliceblue; ">
-            <div class="d-flex card-3d-wrap mt-0" style="   background-color: aliceblue; 
-            margin-bottom: 4cm; margin-right: 12cm;">
-              <div class=" card-front mt-0"
-                style=" padding-left: 10px; padding-right: 10px;   width: auto; height: auto;">
-                <div class="pricing-wrap mt-0"
-                  style=" padding-left: 10px; padding-right: 10px; width: auto; height: auto;">
-                  <h4 class="card-front mb-6" style=" padding-left: 10px; padding-right: 10px;  ">
-
-                  </h4>
-                </div>
-
-                <div class="  card bg-bs-card-bg mt-8 text-center " style=" width: auto; height: auto; ">
-                  <div class="drag-area  ">
-                    <div class="icon"><i class="fas fa-cloud-upload-alt"></i></div>
-                    <header>Drag & Drop to Upload File</header>
-                    <span>OR</span>
-                    <button class="btn rise-on-hover">Browse Files</button>
-                    <input type="file" hidden>
-                  </div>
-
-                  <script src="script.js"></script>
-
-
-
-                  <div class=" d-flex px-12 ">
-
-
-                    <button class=" btn btn-main" style=" background-color: transparent ;border-color: transparent ;  "
-                      type="button" data-bs-toggle="tooltip">
-                      <input type='submit' class="btn btn-secondary rise-on-hover" value='Process file'>
-                    </button>
-                    <button class="    btn btn-secondary "
-                      style="height: fit-content; width: fit-content ; font-size: xx-small; " type="button"
-                      data-bs-toggle="tooltip" name='resetFiles' id='resetFiles'>Reset Files</button>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
+  {{ dropzone.load_js() }}
 </body>
 
 
 
+</head>
+<div style="padding-top: 20mm; padding-left: 170mm ;display: flex !important; 
+flex-wrap: wrap;
+align-content: flex-end;
+flex-direction: row;
+justify-content:flex-end;
+align-items:  flex-end">
+  {% include "includes/navigation.html" %}
+</div>
+
+
+<body class="flex flex-col items-center flex-none" style="padding-left: 10px; padding-right: auto;  margin: 0px 2rem 0 auto;    display: flex !important;
+                width: 100vw;
+                flex-wrap: wrap;
+                align-content: center;
+                flex-direction: column;
+                justify-content: space-evenly;
+                align-items:  center;">
+  <div class=" d-flex container-xl bg-bs-card-bg mt-6  border-radius-xl" style=" margin: auto">
+    <div class="d-flex bg-bs-card-bg card-3d-wrap "
+      style="align-items: center; margin:auto; width: auto; height: fit-content; ">
+      <div class="d-flex row-xl bg-bs-card-bg border-radius-xl justify-content-center; border-radius-xl">
+        <div class=" align-items: center; width: auto; height: auto; border-radius-xl"
+          style="/* padding-left: 2cm; */margin: auto;">
+          <div class="d-flex card-3d-wrap mt-0 bg-bs-card-bg border-radius-xl" style="
+            margin-bottom: 4cm; margin-right: auto; ">
+            <div class="card-front  border-radius-xl  mt-0 bg-bs-card-bg  py-7"
+              style=" padding-left: 10px; ; padding-right: 10px;   width: auto; height: auto; display: flex-box; background-color: #D5F3FE;">
+              <div class="d-flex pricing-wrap mt-0 bg-bs-card-bg" style=" padding-left: 0px; padding-right: 0px;">
+                <h4 class="card-front mb-6 mt-4 bg-bs-card-bg border-radius-xl"
+                  style=" padding: 1rem 0rem 1rem 0rem;scale:1.5">
+
+                </h4>
+              </div>
+
+              <div class=" d-flex card bg-bs-card-bg mt-7 text-center py-5"
+                style=" width: fit-content; height: max-content;">
+                <div class="drag-area bg-bs-card-bg "
+                  style="border-style: dotted ; border-color: transparent; margin: 0px 2rem 0 2rem;">
+                  <div class="drag-area-icon"><i class="ni ni-cloud-upload-96" style="scale: 5;"></i></div>
+                  <header
+                    style="scale:1.1; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; padding-bottom: 0.75rem ;">
+                    Drag
+                    &amp;
+                    Drop to Upload File
+                    <form
+                      style="display:flex;height: max-content;flex-wrap: wrap;align-content: center;justify-content: space-evenly;align-items: stretch;width: max-content;margin: auto;flex-direction: column;align-items: center;" method="post" enctype="multipart/form-data">
+                      <input class="btn btn-main rise-on-hover margin-top: 2rem;" type=file name=file
+                        style=" margin-top: 5mm; padding: 2rem;border:maroon; border-style:dotted; font-size: 10px;">
+
+                      <div
+                        style="/* display: flex !important; */flex-wrap: wrap;justify-content: space-around;align-items: center;align-content: center;flex-direction: row; padding-top: 2rem;">
+
+                        <button type="submit" class=" btn btn-primary bg-bs-card-bg "
+                        style="margin: 2rem;font-size: x-small;align-items: center;" method="POST"
+                          enctype="multipart/form-data">Process</button>
+
+                        <button class=" btn btn-secondary bg-bs-card-bg "
+                          style="margin: 2rem;font-size: x-small;align-items: center;" type="reset"
+                          data-bs-toggle="tooltip" name="resetFiles" id="resetFiles">
+                          Reset Files</button>
+                      </div>
+                    </form>
+                  </header>
+
+                </div>
+
+
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
 
 
 
@@ -113,26 +135,41 @@
 
 
 
-<!-- APP Configurator -->
-{% include "includes/fixed-plugin.html" %}
 
-<!-- Core JS Files -->
-{% include "includes/scripts.html" %}
 
-<script>
-  var win = navigator.platform.indexOf('Win') > -1;
-  if (win && document.querySelector('#sidenav-scrollbar')) {
-    var options = {
-      damping: '0.5'
+
+
+
+
+  <!-- APP Configurator -->
+
+
+  <!-- Core JS Files -->
+  <!--   Core JS Files   -->
+  <script src="/static/assets/js/core/popper.min.js"></script>
+  <script src="/static/assets/js/core/bootstrap.min.js"></script>
+
+  <script src="/static/assets/js/plugins/perfect-scrollbar.min.js"></script>
+  <script src="/static/assets/js/plugins/smooth-scrollbar.min.js"></script>
+
+  <script src="/static/assets/js/dark-mode-handler.js"></script>
+
+
+
+  <script>
+    var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+      var options = {
+        damping: '0.5'
+      }
+      Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
     }
-    Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-  }
-</script>
+  </script>
 
-<!-- Github buttons -->
-<script async defer src="https://buttons.github.io/buttons.js"></script>
-<!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
-<script src="{{ config.ASSETS_ROOT }}/js/soft-ui-dashboard.min.js?v=1.0.6"></script>
+  <!-- Github buttons -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+  <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="/static/assets/js/soft-ui-dashboard.min.js?v=1.0.6"></script>
 
 </body>
 
