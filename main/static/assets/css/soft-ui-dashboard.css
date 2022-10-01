@@ -6,6 +6,46 @@
  * Copyright 2011-2022 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
+
+
+ .pricing-wrap h4 {
+  /* width: 100%; */
+  /* display: ruby-base; */
+  /* display: ruby-text-container; */
+  /* display: table-footer-group; */
+  /* display: -webkit-box; */
+  /* display: block; */
+  /* display: inline; */
+  /* display: grid; */
+  width: auto;
+  display: flex;  
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 22px;
+  line-height: 1.7;
+  color: #102770;
+  image-rendering: smooth;
+  padding-bottom: 10px;
+}
+
+/* nucleo-icons.css | http://localhost:5000/static/assets/css/nucleo-icons.css */
+
+.ni {
+  image-rendering: optimizequality;
+}
+
+/* Element | http://localhost:5000/ */
+
+.btn-main {
+  /* font-size: 10px; */
+  /* font-stretch: expanded; */
+  font-size: 2mm;
+  font-stretch: normal;
+}
+
+
 :root {
   --bs-blue: #63B3ED;
   --bs-indigo: #596CFF;
