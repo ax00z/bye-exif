@@ -1,8 +1,9 @@
-from flask import send_from_directory
 import os
-from flask import Flask, flash, request, redirect, url_for, render_template
-from werkzeug.utils import secure_filename
+
 import exifread
+from flask import (Flask, flash, redirect, render_template, request,
+                   send_from_directory, url_for)
+from werkzeug.utils import secure_filename
 
 UPLOAD_FOLDER = './uploads'
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
