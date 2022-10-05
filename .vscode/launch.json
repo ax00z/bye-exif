@@ -4,7 +4,7 @@
         {
             "type": "firefox",
             "request": "launch",
-            "name": "WE",
+            "name": "Launch Firefox against localhost",
             "url": "http://localhost:5000",
             "webRoot": "${workspaceFolder}",
             "enableCRAWorkaround": true,
