@@ -1,0 +1,1 @@
+{"id":"179c9e88-7f34-4b0f-9ec7-55858e295982","space":34525,"runtime":"python3.9","name":"byeEXIF","path":"61e0z6","project":"a0ntl3rt","account":"144798365827","region":"eu-central-1","deps":["ExifRead==3.0.0","Flask==2.0.2","Werkzeug==2.0.3"],"envs":null,"public":true,"log_level":"off","cron":""}
