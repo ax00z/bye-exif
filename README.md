@@ -1,3 +1,4 @@
-<h1> ByeEXIF! - Webapp that clears all the personal data from your files. </h1> 
+# ByeEXIF!
+<h3> Webapp that clears all the personal data from your files </h3>
 
-<link> https://61e0z6.deta.dev </link>
+<h4> Hosted on DETA </h4> <link> https://61e0z6.deta.dev  </link>
